@@ -1,0 +1,15 @@
+Multipliers = [10,9,8,7,6,5,4,3,2]
+Code = []
+Sum = 0
+for i in range(9):
+    digit = int(input("Input ISBN code: "))
+    Code.append(digit)
+CheckDigit = int(input("Input ISBN code: "))
+for i in range(9):
+    isbn = Multipliers[i]*Code[i]
+    Sum = Sum + isbn
+Check = 11 - (Sum%11)
+if CheckDigit == Check:
+    print("Valid ISBN Code")
+else:
+    print("Invalid ISBN Code")
