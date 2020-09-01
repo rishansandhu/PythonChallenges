@@ -1,0 +1,15 @@
+Numbers = []
+Max = 0
+Min = 1000
+Sum = 0
+import random
+for i in range(0,50):
+    Numbers.append(random.randint(0,1000))
+for i in range(0,50):
+    if Numbers[i] > Max:
+        Max = Numbers[i]
+    elif Numbers[i] < Min:
+        Min = Numbers[i]
+    Sum = Sum + Numbers[i]
+Mean = Sum / 50
+print("Max Number: ", Max, "Min Number: ", Min, "The average is ", Mean)
