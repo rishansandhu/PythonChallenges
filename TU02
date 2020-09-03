@@ -1,0 +1,4 @@
+#TU02
+print("Hi nice to meet you, my name is computer")
+Name = input("What's your name? ")
+print("Nice to meet you, ", Name)
