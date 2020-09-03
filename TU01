@@ -1,0 +1,4 @@
+#TU01
+print("my name is computer")
+print(12.321**3)
+print(22/7)
