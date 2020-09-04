@@ -1,0 +1,20 @@
+def happy():
+    print('   o     o   ')
+    print('      /_     ')
+    print(' \__________/')
+    return
+def sad():
+    print('   o     o   ')
+    print('      /_     ')
+    print('  __________ ')
+    print(' |          |')
+    return
+def surprised():
+    print('   o     o   ')
+    print('      /_     ')
+    print('    ______   ')
+    print('   |      |  ')
+    print('    ------   ')
+    return
+
+happy(), sad(), surprised()
