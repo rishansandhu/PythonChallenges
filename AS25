@@ -1,0 +1,10 @@
+def histogram(data):
+    for i in data:
+        output = ''
+        times = i
+        while( times > 0 ):
+          output += '*'
+          times = times - 1
+        print(output)
+    return
+histogram([4, 9, 7])
