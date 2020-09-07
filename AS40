@@ -1,0 +1,18 @@
+def clearscreen():
+    print("                                ")
+    print("                                ")
+    print("                                ")
+    print("                                ")
+    print("                                ")
+    print("                                ")
+    print("                                ")
+    print("                                ")
+    print("                                ")
+    print("                                ")
+    return
+message = input("Do you want to clear the screen? yes or no ")
+while message == "no":
+    print("Hello")
+    message = input("Do you want to clear the screen? yes or no ")
+else:
+    clearscreen()
