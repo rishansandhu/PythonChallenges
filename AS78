@@ -16,5 +16,10 @@ def surprised():
     print('   |      |  ')
     print('    ------   ')
     return
-
-happy(), sad(), surprised()
+feeling = input("Are you feeling happy, sad or surprised? ")
+if feeling == "happy":
+    happy()
+elif feeling == "sad":
+    sad()
+else:
+    surprised()
