@@ -1,0 +1,13 @@
+string = input("Input a word / sentence: ")
+def make_it_laugh(string):
+    letters = []
+    vowels = ["a","e","i","o","u"]
+    for char in string:
+        if char in vowels:
+            char = "haha"
+            letters.append(char)
+        else:
+            letters.append(char)
+    return ''.join(letters)
+
+print(make_it_laugh(string))
