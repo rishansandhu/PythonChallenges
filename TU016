@@ -1,0 +1,13 @@
+Ringgit = "RM129"
+print(f"{Ringgit}")
+
+numcol1 = [3, 6, 9]
+numcol2 = [2,4,6]
+numcol3 = [5,10,15]
+
+print("\nMultiples of 3  Multiples of 2 Multiples of 5")
+for i in range(3):
+    print(f"{numcol1[i]:<15} {numcol2[i]:<15} {numcol3[i]:<15}")
+
+number = int(input("Input an integer"))
+print(f"Binary: {number:b}\nHexadecimal: {number:x}\nDecimal: {number:d}")
