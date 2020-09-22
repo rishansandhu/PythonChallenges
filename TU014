@@ -1,0 +1,5 @@
+MyString = "computer"
+print(MyString)
+print(MyString[-1:-13:-1])
+print(MyString[0:13:2])
+print(MyString[0:13:3])
