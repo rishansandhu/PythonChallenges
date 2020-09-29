@@ -1,0 +1,6 @@
+choice = input("Input 1 character: ")
+while len(choice) > 1 or len(choice) == 0:
+    print("INVALID")
+    choice = input("Input 1 character: ")
+else:
+    print("Congrats you inputted 1 character!")
