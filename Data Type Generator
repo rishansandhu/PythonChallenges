@@ -1,0 +1,65 @@
+import random
+import datetime
+import string
+chars = string.ascii_letters + string.digits
+choice = [True,False]
+
+def intgen():
+    x = random.randint(0,1000)
+    return x
+
+def chargen():
+    x = random.choice(chars)
+    return x
+    
+def realgen():
+    x = random.uniform(0,1000)
+    return x
+
+def boogen():
+    x = random.choice(choice)
+    return x
+
+def dategen():
+    x = datetime.datetime(random.randint(0,3000),random.randint(1,12), random.randint(1,31))
+    return x
+
+def strgen():
+    x = ''.join((random.choice(chars) for i in range(random.randint(1,10))))
+    return x
+    
+print("1: Random Int")
+print("2: Random Char")
+print("3: Random Real")
+print("4: Random Boolean")
+print("5: Random Date")
+print("6: Random Str")
+
+a = int(input("What would you like?: "))
+if a == 1:
+    x = intgen()
+    print(x)
+
+elif a == 2:
+    x = chargen()
+    print(x)
+    
+elif a == 3:
+    x = realgen()
+    print(x)
+    
+elif a == 4:
+    x = boogen()
+    print(x)
+    
+elif a == 5:
+    x = dategen()
+    print(x)
+    
+elif a == 6:
+    x = strgen()
+    print(x)
+
+else:
+    print("INVALID CHOICE---------RESTART PROGRAM")
+    
