@@ -1,0 +1,14 @@
+from math import pi
+def area():
+    x = pi * radius**2
+    print(f"The area of the circle is {x}cm^2")
+    return x
+    
+def circum():
+    y = pi * radius * 2
+    print(f"The circumference of the circle is {y}cm")
+    return y
+    
+radius = float(input("Input radius: "))
+area()
+circum()
