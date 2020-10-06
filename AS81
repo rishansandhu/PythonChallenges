@@ -1,0 +1,20 @@
+def add():
+    total = sum(Numbers)
+    print(f"The total of the input numbers is: {total}")
+    return total
+
+def product():
+    mult = 1
+    for i in Numbers:
+        mult *= i
+    print(f"The product of the input numbers is: {mult}")
+    return mult
+
+Numbers = []
+amount = int(input("How many numbers do you want to use? "))
+for i in range(amount):
+    num = int(input("Input number: "))
+    Numbers.append(num)
+print(Numbers)
+add()
+product()
