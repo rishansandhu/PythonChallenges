@@ -20,7 +20,6 @@ print(f"2nd Card: {Card2} - value: {Card2Value}")
 total = Card1Value + Card2Value
 hits = 0
 dtotal = 18
-print(f" Dealer's total is {dtotal}")
 
 if total < 21 and hits < 3:
     choice1 = input("Do you wish to hit? [y/n]: ")
@@ -55,9 +54,10 @@ if total < 21 and hits < 3:
             hits = hits + 1
             total = total + Card5Value
             print(f"5th Card: {Card5} - value: {Card5Value}")
+print(f" Dealer's total is {dtotal}")
 if total == 21:
     print("YOU WIN")
-elif total < 21 and hits == 2:
+elif total < 21 and hits == 3:
     print("YOU WIN")
 elif total < 21 and total > dtotal:
     print("YOU WIN")
