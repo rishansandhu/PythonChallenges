@@ -1,0 +1,6 @@
+def backwards(string,length):
+    string = string[::-1]
+    return string
+string = input("Input a word: ")
+string = backwards(string,len(string))
+print(string)
