@@ -1,0 +1,67 @@
+import random
+Deck=["ah","2h","3h","4h","5h","6h","7h","8h","9h","10h","Jh","Qh","Kh","as","2s","3s","4s","5s","6s","7s","8s","9s","10s","Js","Qs","Ks","ad","2d","3d","4d","5d","6d","7d","8d","9d","10d","Jd","Qd","Kd","ac","2c","3c","4c","5c","6c","7c","8c","9c","10c","Jc","Qc","Kc"]
+DeckValue={"2h":2,"3h":3,"4h":4,"5h":5,"6h":6,"7h":7,"8h":8,"9h":9,"10h":10,"Jh":10,"Qh":10,"Kh":10,"2s":2,"3s":3,"4s":4,"5s":5,"6s":6,"7s":7,"8s":8,"9s":9,"10s":10,"Js":10,"Qs":10,"Ks":10,"2d":2,"3d":3,"4d":4,"5d":5,"6d":6,"7d":7,"8d":8,"9d":9,"10d":10,"Jd":10,"Qd":10,"Kd":10,"2c":2,"3c":3,"4c":4,"5c":5,"6c":6,"7c":7,"8c":8,"9c":9,"10c":10,"Jc":10,"Qc":10,"Kc":10}
+random.shuffle(Deck)
+print("Player's Hand:")
+Card1 = Deck[0]
+Card2 = Deck[1]
+if Card1 == "ah" or Card1 == "as" or Card1 == "ad" or Card1 == "ac": 
+    Card1Value = int(input("Ace as 1 or 11: "))
+else:
+    Card1Value = DeckValue[Card1]
+if Card2 == "ah" or Card2 == "as" or Card2 == "ad" or Card2 == "ac": 
+    print(f"1st Card: {Card1} - value: {Card1Value}")
+    Card2Value = int(input("Ace as 1 or 11: "))
+else:
+    Card2Value = DeckValue[Card2]
+
+print(f"1st Card: {Card1} - value: {Card1Value}")
+print(f"2nd Card: {Card2} - value: {Card2Value}")
+total = Card1Value + Card2Value
+hits = 0
+dtotal = 18
+print(f" Dealer's total is {dtotal}")
+
+if total < 21 and hits < 3:
+    choice1 = input("Do you wish to hit? [y/n]: ")
+    while choice1 == "y" and hits == 0:
+        Card3 = Deck[2]
+        if Card3 == "ah" or Card3 == "as" or Card3 == "ad" or Card3 == "ac": 
+            Card3Value = int(input("Ace as 1 or 11: "))
+        else:
+            Card3Value = DeckValue[Card3]
+        hits = hits + 1
+        total = total + Card3Value
+        print(f"3rd Card: {Card3} - value: {Card3Value}")
+    if choice1 == "y" and total < 21 and total <= dtotal:
+        choice2 = input("Do you wish to hit? [y/n]: ")
+        while choice2 == "y" and hits == 1:
+            Card4 = Deck[3]
+            if Card4 == "ah" or Card4 == "as" or Card4 == "ad" or Card4 == "ac": 
+                Card4Value = int(input("Ace as 1 or 11: "))
+            else:
+                Card4Value = DeckValue[Card4]
+            hits = hits + 1
+            total = total + Card4Value
+            print(f"4th Card: {Card4} - value: {Card4Value}")
+    if choice1 == "y" and total < 21 and total <= dtotal:
+        choice3 = input("Do you wish to hit? [y/n]: ")
+        while choice3 == "y" and hits == 2:
+            Card5 = Deck[4]
+            if Card5 == "ah" or Card5 == "as" or Card5 == "ad" or Card5 == "ac": 
+                Card5Value = int(input("Ace as 1 or 11: "))
+            else:
+                Card5Value = DeckValue[Card5]
+            hits = hits + 1
+            total = total + Card5Value
+            print(f"5th Card: {Card5} - value: {Card5Value}")
+if total == 21:
+    print("YOU WIN")
+elif total < 21 and hits == 2:
+    print("YOU WIN")
+elif total < 21 and total > dtotal:
+    print("YOU WIN")
+else:
+    print("YOU LOSE")
+
+
