@@ -1,0 +1,14 @@
+balance = 1000
+wdraw = input("Would you like to withdraw money? [y/n] ")
+while wdraw == "y":
+    print(f"balance: ${balance}")
+    withdrawal = float(input("What amount of money would you like to withdraw: "))
+    while (withdrawal%5) != 0 or withdrawal > balance:
+        print("Please withdraw a sum that is divisible by 5 or within your balance")
+        withdrawal = float(input("What amount of money would you like to withdraw: "))
+    else:
+        balance = balance - withdrawal - 0.5
+        print(f"Your new balance is ${balance}")
+    wdraw = input("Would you like to withdraw money? [y/n] ")
+else:
+    print(f"Your new balance is ${balance}")
