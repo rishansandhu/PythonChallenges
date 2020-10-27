@@ -1,0 +1,31 @@
+morse = { 'A':'.-', 'B':'-...', 'C':'-.-.', 'D':'-..', 'E':'.', 'F':'..-.', 'G':'--.', 'H':'....', 'I':'..', 'J':'.---', 'K':'-.-', 'L':'.-..', 'M':'--', 'N':'-.', 'O':'---', 'P':'.--.', 'Q':'--.-', 'R':'.-.', 'S':'...', 'T':'-', 'U':'..-', 'V':'...-', 'W':'.--', 'X':'-..-', 'Y':'-.--', 'Z':'--..', '1':'.----', '2':'..---', '3':'...--', '4':'....-', '5':'.....', '6':'-....', '7':'--...', '8':'---..', '9':'----.', '0':'-----', ', ':'--..--', '.':'.-.-.-', '?':'..--..'}
+english = {v: k for k, v in morse.items()}
+etom = []
+
+def TO_UPPER():
+    return string.upper()
+
+choice = int(input("1 - English to Morse Code \n2 - Morse Code to English \n: "))
+if choice == 1:
+    string = input("Input phrase to translate: ")
+    x = string.upper()
+    for i in x:
+        if i != " ":
+            etom.append(morse[i])
+            etom.append(" ")
+        else:
+            etom.append("/")
+    print(''.join(etom))
+
+elif choice == 2:
+    string = input("Input phrase to translate: ")
+    final = []
+    char = []
+    spaces = -1
+    for i in string.split("/"):
+        spaces = spaces + 1
+        char += [i.split(" ")]
+        for b in range(len(char[spaces])):
+            final += english.get(char[spaces][b], ' ')
+        final += ' '
+    print(''.join(final))
