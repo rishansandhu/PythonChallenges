@@ -1,0 +1,2 @@
+text = input("what do you want to write: ")
+print(text[-1:(-(len(text))-1):-1])
