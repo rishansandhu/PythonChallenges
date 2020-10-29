@@ -1,0 +1,7 @@
+vowels = ["a","e","i","o","u"]
+vowelcount = 0
+text = input("Input word: ")
+for j in text:
+    if j in vowels:
+        vowelcount = vowelcount + 1
+print(f"There are {vowelcount} vowels in this word")
