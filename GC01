@@ -1,0 +1,17 @@
+import random
+compnum = random.randint(0,100)
+print("GUESS THE COMPUTER'S NUMBER BETWEEN 0 AND 100")
+usernum = int(input("Input Guess: "))
+while usernum != compnum:
+    print("WRONG GUESS")
+    while usernum > 100 or usernum < 0:
+        print("YOUR GUESS IS OUT OF RANGE, 0 TO 100 ONLY!")
+        usernum = int(input("Input Guess: "))
+    if usernum > compnum:
+        print("Your guess is too high")
+        usernum = int(input("Input Guess: "))
+    if usernum < compnum:
+        print("Your guess is too low")
+        usernum = int(input("Input Guess: "))
+else:
+    print(f"GREAT JOB, THE COMPUTER'S NUMBER WAS {compnum}")
