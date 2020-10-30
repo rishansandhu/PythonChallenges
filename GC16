@@ -1,0 +1,6 @@
+text = input("Input text: ")
+words = ''.join(text.split())
+if "qwerty" in words:
+    print("The characters 'qwerty' have been used together in this text")
+else:
+    print("No 'qwerty' in this text")
