@@ -1,0 +1,17 @@
+MyList = []
+more = input("do you want more numbers: [y/n] ")
+while more == "y":
+    num = int(input("Input Number: "))
+    MyList.append(num)
+    more = input("do you want more numbers [y/n] ")
+
+n = len(MyList) 
+for i in range(n-1): 
+    for j in range(0, n-i-1): 
+        if MyList[j] > MyList[j+1] : 
+            MyList[j] = MyList[j+1]
+            MyList[j+1] = MyList[j]
+
+print ("Numbers in order from lowest to highest:") 
+for i in range(len(MyList)): 
+    print (MyList[i])
