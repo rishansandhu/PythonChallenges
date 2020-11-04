@@ -1,0 +1,31 @@
+vowels = 'aeiou'
+reject = ['ab','cd','pq','xy']
+nice = []
+naughty = []
+more = input("anymore names? [y/n] ")
+while more == "y":
+    name = input("Input Name: ")
+    v=0
+    c=0
+    r=0
+    for i in name:
+        if i in vowels:
+            v += 1
+        n = len(name)
+        for i in range(n-1):
+            for j in range(0, n-i-1):
+                if name[j] == name[j+1] :
+                    c += 1
+        if name in reject:
+            r += 1
+    if v >= 3 and c >= 1 and r == 0:
+        nice.append(name)
+        more = input("anymore names? [y/n] ")
+
+    else:
+        naughty.append(name)
+        more = input("anymore names? [y/n] ")
+
+else:
+    print(f" Nice : {nice}")
+    print(f"Naughty : {naughty}")
