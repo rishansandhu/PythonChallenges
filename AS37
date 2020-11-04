@@ -24,4 +24,3 @@ elif choice == 2:
     print(final)
 else:
     print("INVALID CHOICE")
-    choice = int(input("Which do you want: /nTranslate: 1 /nDecode: 2 /n"))
