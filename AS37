@@ -1,0 +1,27 @@
+consonant = 'bcdfghjklmnpqrstvwxyz'
+choice = int(input("Which do you want: \nTranslate: 1 \nDecode: 2 \n"))
+if choice == 1:
+    final = ""
+    string = input("What do you want to translate?: ")
+    for i in string:
+        if i not in consonant:
+            final += i
+        else:
+            final += i
+            final += "o"
+            final += i
+    print(''.join(final))
+elif choice == 2:
+    word = input("What do you want to translate: ")
+    final = ""
+    j = 0
+    while j in range(len(word)):
+        final += word[j]
+        if word[j] in consonant:
+            j += 3
+        else:
+            j += 1
+    print(final)
+else:
+    print("INVALID CHOICE")
+    choice = int(input("Which do you want: /nTranslate: 1 /nDecode: 2 /n"))
