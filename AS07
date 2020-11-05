@@ -1,0 +1,40 @@
+alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+final = []
+def TO_UPPER():
+    return string.upper()
+
+choice = int(input("Encode : 1 \nDecode : 2 \n"))
+if choice == 1:
+    translate = input("What do you want to encode: ")
+    translate = translate.upper()
+    x = int(input("Input Shift: "))
+    for i in range(len(translate)):
+        char = translate[i]
+        if char not in alphabet:
+            final.append(char)
+        for j in range(len(alphabet)):
+            if char == alphabet[j]:
+                if j+x > 25:
+                    k = j+x-26
+                    final.append(alphabet[k])
+                else:
+                    final.append(alphabet[j+x])
+    print(f"Final Translation: {''.join(final)}")
+elif choice == 2:
+    translate = input("What do you want to decode: ")
+    translate = translate.upper()
+    x = int(input("Input Shift: "))
+    for i in range(len(translate)):
+        char = translate[i]
+        if char not in alphabet:
+            final.append(char)
+        for j in range(len(alphabet)):
+            if char == alphabet[j]:
+                if j-x < 0:
+                    k = j-x+26
+                    final.append(alphabet[k])
+                else:
+                    final.append(alphabet[j-x])
+    print(f"Final Translation: {''.join(final)}")
+else:
+    print("INVALID OPTION")
