@@ -1,0 +1,22 @@
+x = 0
+y = 0
+with open("mam.txt","r") as whole_file:
+   for line in whole_file:
+        print(line, end='')
+        if 'If' in line or 'if' in line:
+            x = x+1
+print(f"\nCount: {x}")
+
+with open("if.txt","r") as whole_file:    
+    for line in whole_file:        
+        if "if" in line.lower():            
+            y+=1        
+        print(line,end="")
+print(f"\nCount: {y}")
+
+if y > x: 
+    print(f"If ({y}) has more 'if' than mam ({x})")
+else:
+    print(f"mam ({x}) has more 'if' than if ({y})")
+
+print(f"Total number of 'if': {x+y}")
