@@ -1,0 +1,21 @@
+import random
+choice = ['A','B']
+play = input("do you want to play? [y/n] ")
+while play == 'y':
+    print("You can either tell us the truth or stay silent, \nBoth of you stay silent and you get 1 year each, \n1 of you confess and the other stays silent then silent gets 20 years but confess is free, \nBoth confess and it's 5 years each")
+    cpuchoice = random.choice(choice)
+    pchoice = input("A: Confess \nB: Stay Silent \n [A/B] ")
+    while pchoice not in choice:
+        print("Invalid Choice, A or B only")
+        pchoice = input("A: Confess \nB: Stay Silent \n [A/B] ")
+    if cpuchoice == 'A' and pchoice == 'A':
+        print("I guess you both stay confess, 5 year each")
+    elif cpuchoice == 'A' and pchoice == 'B':
+        print("Your buddy confessed, 20 years for you")
+    elif cpuchoice == 'B' and pchoice == 'A':
+        print("Looks like your buddy gets 20 years, you are free to go")
+    else:
+        print("Looks like neither confess, 1 year each")
+    play = input("do you want to play again? [y/n] ")
+else: 
+    print("GAME OVER")
