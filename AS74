@@ -1,0 +1,34 @@
+def NAND(A, B):
+    return ~(A & B)+2
+
+choice = int(input('AND : 1 \nOR : 2 \nNOR : 3 \nXOR : 4 \nNOT : 5 \n '))
+if choice == 1: #AND
+    A = int(input("A: "))
+    B = int(input("B: "))
+    c = NAND(A,B)
+    print(f"Output of {A} AND {B} is {NAND(c,c)}")
+elif choice == 2: #OR
+    A = int(input("A: "))
+    B = int(input("B: "))
+    c = NAND(A,A)
+    d = NAND(B,B)
+    print(f"Output of {A} OR {B} is {NAND(c,d)}")
+elif choice == 3: #NOR
+    A = int(input("A: "))
+    B = int(input("B: "))
+    c = NAND(A,A)
+    d = NAND(B,B)
+    e = NAND(c,d)
+    print(f"Output of {A} NOR {B} is {NAND(e,e)}")
+elif choice == 4: #XOR
+    A = int(input("A: "))
+    B = int(input("B: "))
+    c = NAND(A,B)
+    d = NAND(A,c)
+    e = NAND(B,c)
+    print(f"Output of {A} XOR {B} is {NAND(d,e)}")
+elif choice == 5: #NOT
+    A = int(input("A: "))
+    print(f"Output of NOT {A} is {NAND(A,A)}")
+else:
+    print("INVALID CHOICE--------RESTART PROGRAM")
