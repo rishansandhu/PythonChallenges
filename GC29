@@ -1,0 +1,6 @@
+import random
+workethic = ['good','excellent','exceptional','amazing','poor','lacklustre']
+hwcomplete = ['on time','late','early','extremely late or never']
+kind = ['favourite','likeable','least favourite','hated']
+name = input("Input Name of Student: ")
+print(f"{name} has a {random.choice(workethic)} in-school work ethic. They hand in their homework {random.choice(hwcomplete)}, they are one of my {random.choice(kind)} students ")
