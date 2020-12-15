@@ -1,0 +1,8 @@
+import turtle
+sides = int(input('No. of sides: '))
+angle = 180-(((sides-2)*180)/sides)
+print(angle)
+for i in range(sides):
+    turtle.forward(50)
+    turtle.right(angle)
+    
