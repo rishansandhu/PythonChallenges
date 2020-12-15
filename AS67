@@ -1,0 +1,45 @@
+import random
+Cards = ['A','B','C','D','E','F','G','H','I','J']
+CardValues = {'A':1,'B':2,'C':3,'D':4,'E':5,'F':6,'G':7,'H':8,'I':9,'J':10}
+
+P1Deck = []
+P2Deck = []
+while len(P1Deck) < 5: 
+    deal = random.choice(Cards)
+    P1Deck.append(deal)
+    Cards.remove(deal)
+
+while len(P2Deck) < 5:
+    deal = random.choice(Cards)
+    P2Deck.append(deal)
+    Cards.remove(deal)
+
+
+while len(P1Deck) > 0 and len(P2Deck) > 0:
+    print(P1Deck)
+    P1choice = input("Which card will P1 choose")
+    while P1choice not in P1Deck:
+        print("Invalid Input")
+        P1choice = input("Which card will P1 choose")
+    print(P2Deck)
+    P2choice = input("Which card will P2 choose")
+    while P2choice not in P2Deck:
+        print("Invalid Input")
+        P2choice = input("Which card will P2 choose")
+
+    p1value = CardValues[P1choice]
+    p2value = CardValues[P2choice]
+
+    if p1value > p2value:
+        P1Deck.append(P2choice)
+        P2Deck.remove(P2choice)
+        print("P1 wins")
+    else:
+        P2Deck.append(P1choice)
+        P1Deck.remove(P1choice)
+        print("P2 wins")  
+else:
+    if len(P1Deck) == 0:
+        print('P2 Wins!')
+    elif len(P2Deck) == 0:
+        print('P1 Wins!')
