@@ -19,7 +19,7 @@ print(f"1st Card: {Card1} - value: {Card1Value}")
 print(f"2nd Card: {Card2} - value: {Card2Value}")
 total = Card1Value + Card2Value
 hits = 0
-dtotal = 18
+dtotal = random.randint(4,21)
 
 if total < 21 and hits < 3:
     choice1 = input("Do you wish to hit? [y/n]: ")
