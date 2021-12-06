@@ -1,0 +1,31 @@
+import pickle
+class Database:
+    def __init__(self,chapter, syllabuspoint, confident = 1):
+        self.chapter = chapter
+        self.syllabuspoint = syllabuspoint
+        self.confident = confident
+
+    def setconfident(self):
+        confident = int(input("Input a number from 1 (unconfident) to 5(confident): "))
+        while confident < 1 or confident > 5:
+            print("Invalid input, please enter a number between 1 and 5.")
+            confident = int(input("Input a number from 1 (unconfident) to 5(confident): "))
+        self.confident = confident
+    
+    def returnconfident(self):
+        return self.confident
+
+    def __repr__(self):
+        return self.chapter + self.syllabuspoint
+
+database = []
+with open("newpractical.txt","r") as whole_file:
+    for line in whole_file:
+        x = line.split(':')
+        database.append(Database(x[0],x[1]))
+print(database)
+
+for i in database:
+    with open("practical.pickle","wb") as picklefile:
+        pickle.dump(i, picklefile)
+    print(i)
